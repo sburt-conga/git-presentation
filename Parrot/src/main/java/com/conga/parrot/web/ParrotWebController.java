@@ -7,4 +7,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ParrotWebController {
+    @GetMapping(value = "/")
+    public ResponseEntity<String> echo(@RequestParam("value") String input) {
+        return ResponseEntity.ok(input);
+    }
 }
